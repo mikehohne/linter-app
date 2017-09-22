@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import routes from "./routes";
 
+
 mongoose.connect(process.env.DB_CONNECTION_STRING, () => {
 	console.log("Connected to Mongo...");
 });
