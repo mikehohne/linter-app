@@ -1,16 +1,18 @@
 {
-  "name": "machine",
+  "name": "the-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "eslint server/",
+    "test": "eslint server/ && mocha ./server/test/",
     "clean": "rm -rf dist",
     "start": "npm test && nodemon bin/dev",
     "build": "npm run clean && mkdir dist && babel server -s -d dist",
     "production": "npm run build && nodemon bin/production"
   },
-  "pre-commit": ["test"],
+  "pre-commit": [
+    "test"
+  ],
   "author": "Michael Hohne",
   "license": "ISC",
   "devDependencies": {
@@ -30,6 +32,7 @@
   "dependencies": {
     "express": "^4.15.4",
     "firebase": "^4.2.0",
+    "mocha": "^3.5.3",
     "shortid": "^2.2.8"
   }
 }
